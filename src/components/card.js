@@ -3,30 +3,31 @@ import React, { Component } from 'react';
 import Input from './input';
 import Content from './content';
 
+const INITIAL_STATE = {
+        color: '',
+        pluralNoun: '',
+        adjectiveOne: '',
+        celebOne: '',
+        adjectiveTwo: '',
+        nounOne: '',
+        numberOne: '',
+        numberTwo: '',
+        nounTwo: '',
+        adjectiveThree: '',
+        celebTwo: '',
+        celebThree: '',
+        adjectiveFour: '',
+        nounThree: '',
+        celebFour: '',
+        adjectiveFive: '',
+        contentVisible: false
+    }
+// const is a variable
 class Card extends Component {
 
     constructor() {
         super()
-
-        this.state = {
-            color: '',
-            pluralNoun: '',
-            adjectiveOne: '',
-            celebOne: '',
-            adjectiveTwo: '',
-            nounOne: '',
-            numberOne: '',
-            numberTwo: '',
-            nounTwo: '',
-            adjectiveThree: '',
-            celebTwo: '',
-            celebThree: '',
-            adjectiveFour: '',
-            nounThree: '',
-            celebFour: '',
-            adjectiveFive: '',
-            contentVisible: false
-        }
+        this.state = INITIAL_STATE;
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -38,9 +39,21 @@ class Card extends Component {
 
     handleFormSubmit(event) {
         event.preventDefault()
+
+        if(this.state.contentVisible) {
+        // renders content invisble when clicking clear form
+        // used INITIAL_STATE variable to cut content
+        this.setState(INITIAL_STATE)
+    } else {
         this.setState({ contentVisible: !this.state.contentVisible })
     }
+    
+    
+        
+    
+    }
 
+    
     render() {
 
         const inputData = [
