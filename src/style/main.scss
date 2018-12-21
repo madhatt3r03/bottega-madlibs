@@ -81,17 +81,38 @@
 
 .input {
     display: grid;
-    grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-s]
+    grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-s];
+
+    font-family: 'Montserrat';
+    text-align: center;
     
-    &__number {
+    &__title {
         grid-column: input-s/input-e;
+
+        border-top: 1px solid #b3b3b3;
+        color: #b3b3b3;
+        font-size: 12px;
+        font-weight: 300px;
+        
     }
 
     input {
         grid-column: input-s/input-e;
+
+        border: none;
+        font-size: 15px;
+        text-align: center;
     }
 
-    &__title {
+    &__number {
         grid-column: number-s/number-e;
+        background-color: #444444;
+        color: white;
+        font-size: 20px;
+        padding-top: 1px;
+    
+        border-radius: 50%;
+        font-family: 'Montserrat';
     }
+
 }
